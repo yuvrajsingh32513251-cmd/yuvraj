@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yuvraj Singh | Alpha Yuvy</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00f7ff;
+    filter: blur(180px);
+    opacity: 0.15;
+    top: -200px;
+    left: -200px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #9d00ff;
+    filter: blur(180px);
+    opacity: 0.15;
+    bottom: -200px;
+    right: -200px;
+    z-index: -1;
+}
+
+/* Navbar */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00f7ff;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f7ff;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 10% 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+    animation: slideLeft 1s ease;
+}
+
+.hero h3 {
+    color: #00f7ff;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #00f7ff;
+    text-shadow: 0 0 20px #00f7ff;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 19px;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: 2px solid #00f7ff;
+    color: #00f7ff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #00f7ff;
+    color: black;
+    box-shadow: 0 0 25px #00f7ff;
+}
+
+/* Profile */
+
+.profile {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #00f7ff;
+    box-shadow: 0 0 40px #00f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Sections */
+
+section {
+    padding: 100px 10%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #00f7ff;
+    margin-bottom: 50px;
+}
+
+/* About */
+
+.about {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Skills */
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    padding: 20px 35px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    border-color: #00f7ff;
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* Projects */
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    background: linear-gradient(145deg, #111, #080808);
+    border: 1px solid #222;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #00f7ff;
+    box-shadow: 0 0 30px rgba(0,247,255,0.4);
+}
+
+.card h3 {
+    color: #00f7ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Contact */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #080808;
+    color: #777;
+}
+
+/* Animations */
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width: 800px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .profile {
+        width: 220px;
+        height: 220px;
+        font-size: 80px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ALPHA <span>YUVY</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h3>HELLO, I AM</h3>
+
+        <h1>
+            Yuvraj <span>Singh</span>
+        </h1>
+
+        <p>
+            Student • Gamer • Creator • Future Developer
+        </p>
+
+        <p>
+            I create digital projects, explore AI tools,
+            design websites, and love gaming and technology.
+        </p>
+
+        <a href="#projects" class="btn">
+            Explore My Work
+        </a>
+
+    </div>
+
+    <div class="profile">
+        🎮
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <p class="about">
+
+        I am Yuvraj Singh, also known as Alpha Yuvy.
+        I am passionate about gaming, AI, graphic design,
+        video editing, website development, and technology.
+
+        My goal is to learn new digital skills and create
+        amazing projects that people enjoy.
+
+    </p>
+
+</section>
+
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">🎮 Gaming</div>
+        <div class="skill">🤖 AI Tools</div>
+        <div class="skill">🎨 Graphic Design</div>
+        <div class="skill">🌐 Web Design</div>
+        <div class="skill">🎬 Video Editing</div>
+        <div class="skill">💻 Coding</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="projects">
+
+        <div class="card">
+
+            <h3>🎮 Gaming Project</h3>
+
+            <p>
+                Creative gaming projects and game development ideas
+                focused on fun and entertainment.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🌐 Portfolio Website</h3>
+
+            <p>
+                A modern dark-themed personal portfolio website
+                created with HTML and CSS.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🤖 AI Video Project</h3>
+
+            <p>
+                Creative videos and content created using
+                modern artificial intelligence tools.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🎨 Graphic Design</h3>
+
+            <p>
+                Logos, gaming designs, thumbnails, Minecraft skins,
+                and creative digital artwork.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact">
+
+        <p>
+            Want to work together or discuss a project?
+        </p>
+
+        <a href="mailto:your-email@example.com" class="btn">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 Alpha Yuvy | Created by Yuvraj Singh
+
+</footer>
+
+</body>
+</html>
